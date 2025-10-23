@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PAGARNUSA UNUSIA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at center, #036E3F 0%, #01391F 100%);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    header {
+      background: rgba(3, 110, 63, 0.95);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      padding: 20px 50px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 50px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Efek logo blur di tengah */
+    main::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('logopn.png') no-repeat center/30%;
+      opacity: 0.12;
+      filter: blur(2px) brightness(1.0);
+      z-index: 0;
+    }
+
+    /* Lapisan efek cahaya 1 */
+    .light-effect {
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(from 180deg at 50% 50%, 
+        rgba(255,255,255,0.25), 
+        rgba(3,110,63,0.6), 
+        rgba(255,255,255,0.25));
+      animation: rotateLight 15s linear infinite;
+      filter: blur(150px) brightness(1.8);
+      z-index: -2;
+      opacity: 0.9;
+    }
+
+    /* Lapisan efek cahaya 2 (lebih lembut) */
+    .light-effect::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(5,142,85,0.4), transparent 70%);
+      animation: pulse 4s ease-in-out infinite alternate;
+      filter: blur(120px);
+    }
+
+    @keyframes rotateLight {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes pulse {
+      from { opacity: 0.4; transform: scale(1); }
+      to { opacity: 0.8; transform: scale(1.1); }
+    }
+
+    main h2 {
+      font-size: 2.3rem;
+      margin-bottom: 35px;
+      text-shadow: 0 0 25px rgba(255,255,255,0.5);
+      z-index: 1;
+      position: relative;
+    }
+
+    .btn-daftar {
+      background-color: #fff;
+      color: #036E3F;
+      border: none;
+      padding: 15px 45px;
+      font-size: 1.3rem;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 35px rgba(3,110,63,0.6);
+      text-decoration: none;
+      z-index: 1;
+      position: relative;
+    }
+
+    .btn-daftar:hover {
+      background-color: #058E55;
+      color: #fff;
+      transform: scale(1.08);
+      box-shadow: 0 0 60px rgba(5,142,85,0.8);
+    }
+
+    footer {
+      background: rgba(3, 110, 63, 0.95);
+      text-align: center;
+      padding: 15px 0;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>PAGARNUSA UNUSIA</h1>
+  </header>
+
+  <main>
+    <!-- Efek cahaya visual -->
+    <div class="light-effect"></div>
+
+    <h2>Ayo Buruan!</h2>
+    <a href="https://forms.gle/v7hJU7kFW7PMYcGk8" class="btn-daftar">Daftar Sekarang</a>
+  </main>
+
+  <footer>
+    &copy; 2025 Pagarnusa UNUSIA.
+  </footer>
+</body>
+</html>
